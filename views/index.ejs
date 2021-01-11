@@ -1,0 +1,40 @@
+<%- include ("partials/header.ejs") %>
+<%- include ("partials/homenavbar.ejs") %>
+<body>
+  <div class="container">
+    <hr>
+    <div class="jumbotron">
+      <h1 class="display-4">Bem vindo!</h1>
+      <p class="lead">Este é um simples blog feito com EJS e Express.</p>
+      <hr class="my-4">
+      <p>Blog feito com as tecnologias EJS e Express para o estudo de nodeJS</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Saiba mais</a>
+    </div>
+    <hr>
+    <% articles.forEach(article=>{ %>
+      <div class="card">
+        <div class="card-header">
+          <h4><%= article.title %></h4>
+        </div>
+        <br>
+
+        <div class="card-body">
+          <a href="/<%= article.slug %>" class="btn btn-success">Ler Artigo</a>
+        </div>
+        <br>
+      </div>
+
+    <%}) %>
+    
+    <div class="row">
+      <div class="col col-12">
+
+        <a href="/articles/page/2" style="float: right;"> Next >>> </a>
+      </div>
+      <hr>
+    </div>
+
+
+  </div>
+</body>
+<%- include ('partials/footer.ejs') %>

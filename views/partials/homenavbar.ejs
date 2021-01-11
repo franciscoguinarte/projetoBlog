@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">
+      TecnoHome
+  </a>
+
+  <ul class="navbar-nav mr-auto">
+      <% if (1 != 2) { %>
+      <li class="nav-item">
+          <a  class="nav-link" href="/admin/login">Adicionar/Editar conteúdo</a>
+      </li>
+
+     <% } %>
+    <li>
+
+        <div class="dropdown">
+           <button class="btn btn-primary dropdown-toggle bg-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Selecione a categoria
+           </button>
+           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <% categories.forEach(categories=> { %>
+                   <a class="dropdown-item" href="/category/<%=categories.slug%>"><%= categories.title %></a>
+                   <%    }) %>
+            </div>
+         </div>
+
+    </li>   
+  </ul> 
+
+</nav>
